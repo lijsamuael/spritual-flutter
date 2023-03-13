@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import 'components/home/Body.dart';
 import 'components/common/TopBar.dart';
@@ -43,13 +44,78 @@ class _MyWidgetState extends State<MyWidget> {
         appBar: AppBar(
           backgroundColor: Colors.transparent,
           elevation: 0,
-          actions: const [
-            CircleAvatar(
-                backgroundColor: Color.fromRGBO(217, 217, 217, 100),
-                radius: 20),
+          actions: [
+            IconButton(
+              icon: const Icon(FontAwesomeIcons.comment),
+              onPressed: () {},
+            ),
           ],
-          leading: const Icon(
-            IconData(0xf556, fontFamily: 'MaterialIcons'),
+        ),
+        drawer: Drawer(
+          backgroundColor: const Color.fromRGBO(244, 237, 213, 100),
+          child: ListView(
+            children: [
+              DrawerHeader(
+                decoration: const BoxDecoration(
+                  color: Color.fromRGBO(225, 159, 105, 0.694),
+                ),
+                padding: const EdgeInsets.only(bottom: 0, top: 30),
+                child: Column(
+                  children: const [
+                    CircleAvatar(
+                      foregroundImage: AssetImage("assets/images/pp.jpg"),
+                      maxRadius: 50,
+                    ),
+                    Center(
+                      child: Text(
+                        "እህተ ጊዎርጊስ",
+                        style: TextStyle(
+                            fontWeight: FontWeight.w800, fontSize: 20),
+                      ),
+                    )
+                  ],
+                ),
+              ),
+              Column(
+                children: const [
+                  ListTile(
+                    leading: Icon(Icons.person),
+                    title: Text(
+                      "የግል መረጃዎች",
+                      style: TextStyle(fontWeight: FontWeight.w700),
+                    ),
+                  ),
+                  ListTile(
+                    leading: Icon(FontAwesomeIcons.gear),
+                    title: Text(
+                      "ማስተካከያዎች",
+                      style: TextStyle(fontWeight: FontWeight.w700),
+                    ),
+                  ),
+                  ListTile(
+                    leading: Icon(Icons.logout_sharp),
+                    title: Text(
+                      "መውጫ",
+                      style: TextStyle(fontWeight: FontWeight.w700),
+                    ),
+                  ),
+                  ListTile(
+                    leading: Icon(Icons.help),
+                    title: Text(
+                      "እርዳታ",
+                      style: TextStyle(fontWeight: FontWeight.w700),
+                    ),
+                  ),
+                  ListTile(
+                    leading: Icon(Icons.developer_board),
+                    title: Text(
+                      "ስለ ሠሪዎቹ",
+                      style: TextStyle(fontWeight: FontWeight.w700),
+                    ),
+                  )
+                ],
+              ),
+            ],
           ),
         ),
         backgroundColor: const Color.fromRGBO(235, 155, 90, 79),

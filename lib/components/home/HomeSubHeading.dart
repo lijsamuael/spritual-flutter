@@ -1,59 +1,114 @@
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/material.dart';
+import 'package:niu/components/home/Body.dart';
+
+import '../common/MezmurCard.dart';
+import '../common/Post.dart';
 
 class HomeSubHeading extends StatelessWidget {
   const HomeSubHeading({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.only(left: 35, right: 35, top: 20),
-      margin: const EdgeInsets.only(bottom: 5),
-      height: 50,
-      child: ListView(
-        scrollDirection: Axis.horizontal,
-        children: [
-          const SizedBox(
-            child: Text(
-              "ስብከት",
-              style: TextStyle(
-                  fontSize: 18,
-                  fontWeight: FontWeight.bold,
-                  color: Color.fromRGBO(75, 65, 65, 77)),
+    return Expanded(
+      child: DefaultTabController(
+        length: 4,
+        child: Column(
+          children: <Widget>[
+            const TabBar(
+              indicatorColor: Color.fromRGBO(242, 208, 94, 47),
+              labelColor: Colors.black,
+              padding: EdgeInsets.only(bottom: 10),
+              tabs: [
+                Tab(icon: Icon(Icons.music_note), text: 'ስብከት'),
+                Tab(icon: Icon(Icons.movie), text: 'መዝሙር'),
+                Tab(icon: Icon(Icons.book), text: 'በዓላት'),
+                Tab(icon: Icon(Icons.book), text: 'ጥያቄዎች'),
+              ],
             ),
-          ),
-          Container(
-            padding: const EdgeInsets.only(left: 85),
-            child: const Text(
-              "መዝሙር",
-              style: TextStyle(
-                  fontSize: 18,
-                  fontWeight: FontWeight.bold,
-                  color: Color.fromRGBO(75, 65, 65, 77)),
+            Expanded(
+              child: TabBarView(
+                children: [
+                  Expanded(
+                    child: Container(
+                      // height: 500,
+                      width: double.infinity,
+                      child: ListView(
+                        scrollDirection: Axis.vertical,
+                        children: const [
+                          Post(heading:"የማርያም ዝክር", detail:"መጋቢት 2 ከምሽቱ 11 ሰዓት ላይ የ ማርያም ዝክር ስልሚኖር ሁላችሁም እንድትገኙ።\nየቻላችሁትን 5 10 ይዛችሁ ኑ..."),
+                          Post(heading:"የማርያም ዝክር", detail:"መጋቢት 2 ከምሽቱ 11 ሰዓት ላይ የ ማርያም ዝክር ስልሚኖር ሁላችሁም እንድትገኙ።\nየቻላችሁትን 5 10 ይዛችሁ ኑ..."),
+                          Post(heading:"የማርያም ዝክር", detail:"መጋቢት 2 ከምሽቱ 11 ሰዓት ላይ የ ማርያም ዝክር ስልሚኖር ሁላችሁም እንድትገኙ።\nየቻላችሁትን 5 10 ይዛችሁ ኑ..."),
+                          Post(heading:"የማርያም ዝክር", detail:"መጋቢት 2 ከምሽቱ 11 ሰዓት ላይ የ ማርያም ዝክር ስልሚኖር ሁላችሁም እንድትገኙ።\nየቻላችሁትን 5 10 ይዛችሁ ኑ..."),
+                          Post(heading:"የማርያም ዝክር", detail:"መጋቢት 2 ከምሽቱ 11 ሰዓት ላይ የ ማርያም ዝክር ስልሚኖር ሁላችሁም እንድትገኙ።\nየቻላችሁትን 5 10 ይዛችሁ ኑ..."),
+                          Post(heading:"የማርያም ዝክር", detail:"መጋቢት 2 ከምሽቱ 11 ሰዓት ላይ የ ማርያም ዝክር ስልሚኖር ሁላችሁም እንድትገኙ።\nየቻላችሁትን 5 10 ይዛችሁ ኑ..."),
+                          Post(heading:"የማርያም ዝክር", detail:"መጋቢት 2 ከምሽቱ 11 ሰዓት ላይ የ ማርያም ዝክር ስልሚኖር ሁላችሁም እንድትገኙ።\nየቻላችሁትን 5 10 ይዛችሁ ኑ..."),
+                          Post(heading:"የማርያም ዝክር", detail:"መጋቢት 2 ከምሽቱ 11 ሰዓት ላይ የ ማርያም ዝክር ስልሚኖር ሁላችሁም እንድትገኙ።\nየቻላችሁትን 5 10 ይዛችሁ ኑ..."),
+                        ],
+                      ),
+                    ),
+                  ),
+                  Expanded(
+                    child: SizedBox(
+                      // height: 500,
+                      width: double.infinity,
+                      child: ListView(
+                        scrollDirection: Axis.vertical,
+                        children: const [
+                          MezmurCard(heading:"የማርያም ዝክር", detail:"መጋቢት 2 ከምሽቱ 11 ሰዓት ላይ የ ማርያም ዝክር ስልሚኖር ሁላችሁም እንድትገኙ።\nየቻላችሁትን 5 10 ይዛችሁ ኑ..."),
+                          MezmurCard(heading:"የማርያም ዝክር", detail:"መጋቢት 2 ከምሽቱ 11 ሰዓት ላይ የ ማርያም ዝክር ስልሚኖር ሁላችሁም እንድትገኙ።\nየቻላችሁትን 5 10 ይዛችሁ ኑ..."),
+                          MezmurCard(heading:"የማርያም ዝክር", detail:"መጋቢት 2 ከምሽቱ 11 ሰዓት ላይ የ ማርያም ዝክር ስልሚኖር ሁላችሁም እንድትገኙ።\nየቻላችሁትን 5 10 ይዛችሁ ኑ..."),
+                          MezmurCard(heading:"የማርያም ዝክር", detail:"መጋቢት 2 ከምሽቱ 11 ሰዓት ላይ የ ማርያም ዝክር ስልሚኖር ሁላችሁም እንድትገኙ።\nየቻላችሁትን 5 10 ይዛችሁ ኑ..."),
+                          MezmurCard(heading:"የማርያም ዝክር", detail:"መጋቢት 2 ከምሽቱ 11 ሰዓት ላይ የ ማርያም ዝክር ስልሚኖር ሁላችሁም እንድትገኙ።\nየቻላችሁትን 5 10 ይዛችሁ ኑ..."),
+                          MezmurCard(heading:"የማርያም ዝክር", detail:"መጋቢት 2 ከምሽቱ 11 ሰዓት ላይ የ ማርያም ዝክር ስልሚኖር ሁላችሁም እንድትገኙ።\nየቻላችሁትን 5 10 ይዛችሁ ኑ..."),
+                          MezmurCard(heading:"የማርያም ዝክር", detail:"መጋቢት 2 ከምሽቱ 11 ሰዓት ላይ የ ማርያም ዝክር ስልሚኖር ሁላችሁም እንድትገኙ።\nየቻላችሁትን 5 10 ይዛችሁ ኑ..."),
+                          MezmurCard(heading:"የማርያም ዝክር", detail:"መጋቢት 2 ከምሽቱ 11 ሰዓት ላይ የ ማርያም ዝክር ስልሚኖር ሁላችሁም እንድትገኙ።\nየቻላችሁትን 5 10 ይዛችሁ ኑ..."),
+                        ],
+                      ),
+                    ),
+                  ),
+                  Expanded(
+                    child: SizedBox(
+                      // height: 500,
+                      width: double.infinity,
+                      child: ListView(
+                        scrollDirection: Axis.vertical,
+                        children: const [
+                          Post(heading:"የማርያም ዝክር", detail:"መጋቢት 2 ከምሽቱ 11 ሰዓት ላይ የ ማርያም ዝክር ስልሚኖር ሁላችሁም እንድትገኙ።\nየቻላችሁትን 5 10 ይዛችሁ ኑ..."),
+                          Post(heading:"የማርያም ዝክር", detail:"መጋቢት 2 ከምሽቱ 11 ሰዓት ላይ የ ማርያም ዝክር ስልሚኖር ሁላችሁም እንድትገኙ።\nየቻላችሁትን 5 10 ይዛችሁ ኑ..."),
+                          Post(heading:"የማርያም ዝክር", detail:"መጋቢት 2 ከምሽቱ 11 ሰዓት ላይ የ ማርያም ዝክር ስልሚኖር ሁላችሁም እንድትገኙ።\nየቻላችሁትን 5 10 ይዛችሁ ኑ..."),
+                          Post(heading:"የማርያም ዝክር", detail:"መጋቢት 2 ከምሽቱ 11 ሰዓት ላይ የ ማርያም ዝክር ስልሚኖር ሁላችሁም እንድትገኙ።\nየቻላችሁትን 5 10 ይዛችሁ ኑ..."),
+                          Post(heading:"የማርያም ዝክር", detail:"መጋቢት 2 ከምሽቱ 11 ሰዓት ላይ የ ማርያም ዝክር ስልሚኖር ሁላችሁም እንድትገኙ።\nየቻላችሁትን 5 10 ይዛችሁ ኑ..."),
+                          Post(heading:"የማርያም ዝክር", detail:"መጋቢት 2 ከምሽቱ 11 ሰዓት ላይ የ ማርያም ዝክር ስልሚኖር ሁላችሁም እንድትገኙ።\nየቻላችሁትን 5 10 ይዛችሁ ኑ..."),
+                          Post(heading:"የማርያም ዝክር", detail:"መጋቢት 2 ከምሽቱ 11 ሰዓት ላይ የ ማርያም ዝክር ስልሚኖር ሁላችሁም እንድትገኙ።\nየቻላችሁትን 5 10 ይዛችሁ ኑ..."),
+                          Post(heading:"የማርያም ዝክር", detail:"መጋቢት 2 ከምሽቱ 11 ሰዓት ላይ የ ማርያም ዝክር ስልሚኖር ሁላችሁም እንድትገኙ።\nየቻላችሁትን 5 10 ይዛችሁ ኑ..."),
+                        ],
+                      ),
+                    ),
+                  ),
+                  Expanded(
+                    child: SizedBox(
+                      // height: 500,
+                      width: double.infinity,
+                      child: ListView(
+                        scrollDirection: Axis.vertical,
+                        children: const [
+                          Post(heading:"የማርያም ዝክር", detail:"መጋቢት 2 ከምሽቱ 11 ሰዓት ላይ የ ማርያም ዝክር ስልሚኖር ሁላችሁም እንድትገኙ።\nየቻላችሁትን 5 10 ይዛችሁ ኑ..."),
+                          Post(heading:"የማርያም ዝክር", detail:"መጋቢት 2 ከምሽቱ 11 ሰዓት ላይ የ ማርያም ዝክር ስልሚኖር ሁላችሁም እንድትገኙ።\nየቻላችሁትን 5 10 ይዛችሁ ኑ..."),
+                          Post(heading:"የማርያም ዝክር", detail:"መጋቢት 2 ከምሽቱ 11 ሰዓት ላይ የ ማርያም ዝክር ስልሚኖር ሁላችሁም እንድትገኙ።\nየቻላችሁትን 5 10 ይዛችሁ ኑ..."),
+                          Post(heading:"የማርያም ዝክር", detail:"መጋቢት 2 ከምሽቱ 11 ሰዓት ላይ የ ማርያም ዝክር ስልሚኖር ሁላችሁም እንድትገኙ።\nየቻላችሁትን 5 10 ይዛችሁ ኑ..."),
+                          Post(heading:"የማርያም ዝክር", detail:"መጋቢት 2 ከምሽቱ 11 ሰዓት ላይ የ ማርያም ዝክር ስልሚኖር ሁላችሁም እንድትገኙ።\nየቻላችሁትን 5 10 ይዛችሁ ኑ..."),
+                          Post(heading:"የማርያም ዝክር", detail:"መጋቢት 2 ከምሽቱ 11 ሰዓት ላይ የ ማርያም ዝክር ስልሚኖር ሁላችሁም እንድትገኙ።\nየቻላችሁትን 5 10 ይዛችሁ ኑ..."),
+                          Post(heading:"የማርያም ዝክር", detail:"መጋቢት 2 ከምሽቱ 11 ሰዓት ላይ የ ማርያም ዝክር ስልሚኖር ሁላችሁም እንድትገኙ።\nየቻላችሁትን 5 10 ይዛችሁ ኑ..."),
+                          Post(heading:"የማርያም ዝክር", detail:"መጋቢት 2 ከምሽቱ 11 ሰዓት ላይ የ ማርያም ዝክር ስልሚኖር ሁላችሁም እንድትገኙ።\nየቻላችሁትን 5 10 ይዛችሁ ኑ..."),
+                        ],
+                      ),
+                    ),
+                  ),
+                ],
+              ),
             ),
-          ),
-          Container(
-            padding: const EdgeInsets.only(left: 85),
-            child: const Text(
-              "በዓላት",
-              style: TextStyle(
-                  fontSize: 18,
-                  fontWeight: FontWeight.bold,
-                  color: Color.fromRGBO(75, 65, 65, 77)),
-            ),
-          ),
-          Container(
-            padding: const EdgeInsets.only(left: 85),
-            child: const Text(
-              "ጥያቄዎች",
-              style: TextStyle(
-                  fontSize: 18,
-                  fontWeight: FontWeight.bold,
-                  color: Color.fromRGBO(75, 65, 65, 77)),
-            ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
